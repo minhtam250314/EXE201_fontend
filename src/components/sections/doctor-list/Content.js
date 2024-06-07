@@ -44,7 +44,7 @@ class Content extends Component {
                             </div>
                             <p>{item.qualification}</p>
                             <div className="d-flex align-items-center mt-4">
-                                <Link to={"/doctor-details/" + item.id} className="sigma_btn">View More</Link>
+                                <Link to={"/doctor-details/" + item.id} className="sigma_btn">Xem Thêm</Link>
                                 <div className="sigma_team-controls ml-3">
                                     <Link to="#" className={this.state.favorite === item ? 'active' : ''} onClick={(e) => this.favoriteTrigger(item)}>
                                         <i className="fal fa-heart" />

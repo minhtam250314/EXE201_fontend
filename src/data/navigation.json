@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "linkText": "Home",
+        "linkText": "Trang Chủ",
         "link": "/home"
     },
     {
@@ -28,23 +28,23 @@
     },
     {
         "id": 3,
-        "linkText": "Pages",
+        "linkText": "Trang",
         "child": true,
         "submenu": [
             {
                 "id": 3.1,
                 "link": "/about",
-                "linkText": "About Us"
+                "linkText": "Về Chúng Tôi"
             },
             {
                 "id": 3.2,
                 "link": "/services",
-                "linkText": "Services"
+                "linkText": "Dịch Vụ"
             },
             {
                 "id": 3.3,
                 "link": "/service-details/1",
-                "linkText": "Service Details"
+                "linkText": "Thông Tin Về Dịch Vụ"
             },
             {
                 "id": 3.4,
@@ -87,29 +87,12 @@
     },
     {
         "id": 5,
-        "linkText": "Doctors",
-        "child": true,
-        "submenu": [
-            {
-                "id": 5.1,
-                "link": "/doctor-grid",
-                "linkText": "Doctors Grid"
-            },
-            {
-                "id": 5.2,
-                "link": "/doctor-list",
-                "linkText": "Doctors List"
-            },
-            {
-                "id": 5.3,
-                "link": "/doctor-details/1",
-                "linkText": "Doctors Details"
-            }
-        ]
+        "linkText": "Danh Sách",
+        "link": "/doctor-list"
     },
     {
         "id": 6,
-        "link": "/contact",
-        "linkText": "Contact Us"
+        "linkText": "Liên Lạc",
+        "link": "/contact"
     }
 ]

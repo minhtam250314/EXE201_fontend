@@ -17,17 +17,17 @@ class Contactform extends Contacthelper {
                             <div className="row">
                                 <div className="col-lg-6">
                                     <div className="form-group">
-                                        <input type="text" placeholder="Enter Full Name" name="name" value={this.state.name} onChange={this.onNameChange} required />
+                                        <input type="text" placeholder="Họ và Tên" name="name" value={this.state.name} onChange={this.onNameChange} required />
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
                                     <div className="form-group">
-                                        <input type="email" placeholder="Email Address" name="email" value={this.state.email} onChange={this.onEmailChange} required />
+                                        <input type="email" placeholder="Địa Chỉ Email" name="email" value={this.state.email} onChange={this.onEmailChange} required />
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
                                     <div className="form-group">
-                                        <input type="number" placeholder="Phone number" name="phone" value={this.state.phone} onChange={this.onPhoneChange} required />
+                                        <input type="number" placeholder="Số Điện Thoại" name="phone" value={this.state.phone} onChange={this.onPhoneChange} required />
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
@@ -37,7 +37,7 @@ class Contactform extends Contacthelper {
                                 </div>
                                 <div className="col-12">
                                     <div className="form-group">
-                                        <textarea rows={10} placeholder="Enter Message" name="message" value={this.state.message} onChange={this.onMessageChange} required />
+                                        <textarea rows={10} placeholder="Để Lại Lời Nhắn" name="message" value={this.state.message} onChange={this.onMessageChange} required />
                                     </div>
                                 </div>
                                 <ReCAPTCHA
@@ -46,13 +46,13 @@ class Contactform extends Contacthelper {
                                     size="invisible"
                                 />
                                 <div className="col-12 text-center">
-                                    <button type="submit">Submit Request</button>
+                                    <button type="submit">Gửi Yêu Cầu</button>
                                     {/* Form Messages */}
                                     <Alert variant="success" className="d-none mt-3 mb-0" id="server_response_success">
-                                        <strong>Success!</strong> Contact form has been successfully submitted.
+                                        <strong>Thành Công !</strong> Contact form has been successfully submitted.
                                     </Alert>
                                     <Alert variant="danger" className="d-none mt-3 mb-0" id="server_response_danger">
-                                        <strong>Oops!</strong> Something bad happened. Please try again later.
+                                        <strong>Hmm Có gì đó không đúng !</strong> Something bad happened. Please try again later.
                                     </Alert>
                                     {/* Form Messages */}
                                 </div>

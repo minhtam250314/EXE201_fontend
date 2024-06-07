@@ -15,7 +15,7 @@ class Footer extends Component {
                                 </span>
                             </div>
                             <div className="sigma_info-description">
-                                <p>Our Address</p>
+                                <p>Địa Chỉ</p>
                                 <p className="secondary-color"><b>Drive Chicago, IL 60607</b>
                                 </p>
                             </div>
@@ -27,7 +27,7 @@ class Footer extends Component {
                                 </span>
                             </div>
                             <div className="sigma_info-description">
-                                <p>Call Us</p>
+                                <p>Đường Dây Nóng</p>
                                 <p className="secondary-color"><b>360-779-2228</b>
                                 </p>
                             </div>
@@ -39,7 +39,7 @@ class Footer extends Component {
                                 </span>
                             </div>
                             <div className="sigma_info-description">
-                                <p>Our Mail</p>
+                                <p>Địa Chỉ Email</p>
                                 <p className="secondary-color"><b>example@example.com</b>
                                 </p>
                             </div>
@@ -81,7 +81,7 @@ class Footer extends Component {
                             </div>
                             <div className="col-lg-3 col-sm-3">
                                 <div className="sigma_footer-widget">
-                                    <h5 className="widget-title">Services</h5>
+                                    <h5 className="widget-title">Dịch Vụ</h5>
                                     <ul className="sigma_footer-links">
                                         {/* Data */}
                                         {serviceblock.slice(0, 5).map((item, i) => (
@@ -95,22 +95,22 @@ class Footer extends Component {
                             </div>
                             <div className="col-lg-2 col-sm-3">
                                 <div className="sigma_footer-widget">
-                                    <h5 className="widget-title">Useful Links</h5>
+                                    <h5 className="widget-title">Đường Dẫn Khác</h5>
                                     <ul className="sigma_footer-links">
                                         <li>
-                                            <Link to="/">Home</Link>
+                                            <Link to="/">Trang Chủ</Link>
                                         </li>
                                         <li>
-                                            <Link to="/about">About Us</Link>
+                                            <Link to="/about">Thông Tin</Link>
                                         </li>
                                         <li>
                                             <Link to="/blog">News</Link>
                                         </li>
                                         <li>
-                                            <Link to="/doctor-grid">Doctors</Link>
+                                            <Link to="/doctor-grid">Danh Sách</Link>
                                         </li>
                                         <li>
-                                            <Link to="/contact">Contact Us</Link>
+                                            <Link to="/contact">Liên Lạc</Link>
                                         </li>
                                     </ul>
                                 </div>

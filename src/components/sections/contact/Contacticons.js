@@ -14,7 +14,7 @@ class Contacticons extends Component {
                                     </span>
                                 </div>
                                 <div className="sigma_info-description">
-                                    <h5>Our Address</h5>
+                                    <h5>Địa Chỉ</h5>
                                     <p>PSD Building, 2 Tower St, United States.</p>
                                 </div>
                             </div>
@@ -27,7 +27,7 @@ class Contacticons extends Component {
                                     </span>
                                 </div>
                                 <div className="sigma_info-description">
-                                    <h5>Our Phone</h5>
+                                    <h5>Số Điện Thoại</h5>
                                     <p>Telephone: 0029129102320</p>
                                     <p>Mobile: 000 2324 39493</p>
                                 </div>
@@ -41,7 +41,7 @@ class Contacticons extends Component {
                                     </span>
                                 </div>
                                 <div className="sigma_info-description">
-                                    <h5>Our Email</h5>
+                                    <h5>Địa Chỉ Email</h5>
                                     <p>Main Email: example@example.com</p>
                                     <p>Inquiries: example@example.com</p>
                                 </div>
