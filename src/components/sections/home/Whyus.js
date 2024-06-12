@@ -8,7 +8,7 @@ class Whyus extends Component {
                 <div className="col-lg-5 order-2 order-lg-1">
                     <div className="sigma_about style-21">
                         <div className="section-title">
-                            <h3 className="title text-white">Why Choose Docfind Clinic?</h3>
+                            <h3 className="title text-white">Why Choose HomeAssist Clinic?</h3>
                         </div>
                         <div className="sigma_about-content">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. It is a long established fact that a reader will be Lorem ipsum dolor sit amet consectetur.</p>
@@ -31,8 +31,8 @@ class Whyus extends Component {
                 <div className="col-lg-6 offset-lg-1 order-1 order-lg-2">
                     <div className="sigma_about style-21 mt-0 w-100 h-100">
                         <div className="sigma_about-image-1">
-                            <img src={process.env.PUBLIC_URL + "/assets/img/home-1/400x280.jpg"} alt="img" />
-                        </div>
+                            <img src={process.env.PUBLIC_URL + "/assets/img/home-1/370x250.jpg"} alt="img" />
+                        </div>z
                         <div className="sigma_about-image-2 d-none d-sm-block">
                             <img src={process.env.PUBLIC_URL + "/assets/img/home-1/370x250.jpg"} alt="img" />
                         </div>

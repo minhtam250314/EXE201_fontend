@@ -29,7 +29,7 @@ class Banner extends Component {
                     {/* Data */}
                     {banner.map((item, i) => (
                         <div key={i}>
-                            <div className="banner-slider-inner bg-center bg-cover secondary-overlay" style={{ backgroundImage: "url(" + process.env.PUBLIC_URL + "/" + item.image + ")" }}>
+                            <div className="banner-slider-inner bg-center bg-cover secondary-overlay" style={{ backgroundImage: `url(https://headhunting.vn/wp-content/uploads/2023/09/dich-vu-cung-cap-nhan-su-giup-viec-gia-dinh-headhunting.jpg)` }}>
                                 <div className="sigma_banner-text text-center">
                                     <div className="container">
                                         <div className="row justify-content-center">
@@ -38,7 +38,7 @@ class Banner extends Component {
                                                 <h1 className="title text-white" dangerouslySetInnerHTML={{ __html: item.title }} />
                                                 <div className="banner-links d-flex align-items-center justify-content-center">
                                                     <Link to="/doctor-grid" className="sigma_btn">
-                                                        Find A Doctor
+                                                        Find A Helper
                                                         <i className="fal fa-plus ml-3 d-none d-sm-inline-block" />
                                                     </Link>
                                                     <Link to="/about" className="sigma_btn light ml-4">
@@ -61,3 +61,4 @@ class Banner extends Component {
 }
 
 export default Banner;
+
