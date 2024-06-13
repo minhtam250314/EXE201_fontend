@@ -9,7 +9,7 @@ class Team extends Component {
                 <div className="container">
                     <div className="section-title centered">
                         <span className="subtitle">Meet Our Team</span>
-                        <h3 className="title mb-0">Our Creative Team</h3>
+                        <h3 className="title mb-0">Nhân viên của chúng tôi</h3>
                     </div>
                     <div className="row">
                         {/* Data */}

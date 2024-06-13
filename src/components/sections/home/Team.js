@@ -45,7 +45,7 @@ class Team extends Component {
                 <div className="container-fluid p-sm-0">
                     <div className="section-title centered">
                         <span className="subtitle text-white">Meet Our Team</span>
-                        <h3 className="title text-white">Our Creative Team</h3>
+                        <h3 className="title text-white">Nhân Viên Chúng Tôi</h3>
                     </div>
                     <Slider {...settings} className="sigma_team-slider-2">
                         {/* Data */}

@@ -34,6 +34,7 @@ export default function Login({ setUser }) {
     const history = useHistory(); // Changed from useNavigate to useHistory
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -42,13 +43,13 @@ export default function Login({ setUser }) {
             const user = response.data.find(user => user.email === email && user.password === password);
             if (user) {
                 setUser(user);
-                history.push("/home"); // Changed from navigate to history.push
+                history.push("/home"); // Ensure the correct path to Home component
             } else {
-                alert('Invalid credentials');
+                setErrorMessage('Invalid credentials');
             }
         } catch (error) {
             console.error("There was an error logging in!", error);
-            alert('An error occurred during login. Please try again.');
+            setErrorMessage('An error occurred during login. Please try again.');
         }
     };
 
@@ -74,6 +75,11 @@ export default function Login({ setUser }) {
                     <Typography component="h1" variant="h5" sx={{ marginBottom: 2 }}>
                         Login
                     </Typography>
+                    {errorMessage && (
+                        <Typography color="error" variant="body2" sx={{ marginBottom: 2 }}>
+                            {errorMessage}
+                        </Typography>
+                    )}
                     <Box component="form" onSubmit={handleSubmit} noValidate sx={{ width: '100%' }}>
                         <TextField
                             margin="normal"
