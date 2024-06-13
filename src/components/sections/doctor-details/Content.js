@@ -84,7 +84,7 @@ class Content extends Component {
                                                 </iframe>
                                             </div>
                                             <div className="sigma_contact-blocks">
-                                                <h5>Hospital Address</h5>
+                                                <h5>Household Center Address</h5>
                                                 <div className="row">
                                                     <div className="col-md-4">
                                                         <div className="sigma_contact-block style-3">
@@ -188,23 +188,23 @@ class Content extends Component {
                                                     <li className="d-flex justify-content-between mb-3">
                                                         <div className="d-flex">
                                                             <input type="checkbox" id="checkbox" name="checkbox" />
-                                                            <label className="mb-0" htmlFor="checkbox">Lorem ipsum dolor</label>
+                                                            <label className="mb-0" htmlFor="checkbox">Gói Ngày</label>
                                                         </div>
-                                                        <span>$80</span>
+                                                        <span>$10</span>
                                                     </li>
                                                     <li className="d-flex justify-content-between mb-3">
                                                         <div className="d-flex">
                                                             <input type="checkbox" id="checkbox1" name="checkbox" />
-                                                            <label className="mb-0" htmlFor="checkbox1">Lorem ipsum dolor</label>
+                                                            <label className="mb-0" htmlFor="checkbox1">Gói Tuần</label>
                                                         </div>
-                                                        <span>$80</span>
+                                                        <span>$70</span>
                                                     </li>
                                                     <li className="d-flex justify-content-between">
                                                         <div className="d-flex">
                                                             <input type="checkbox" id="checkbox2" name="checkbox" />
-                                                            <label className="mb-0" htmlFor="checkbox2">Lorem ipsum dolor</label>
+                                                            <label className="mb-0" htmlFor="checkbox2">Gói Tháng</label>
                                                         </div>
-                                                        <span>$80</span>
+                                                        <span>$280</span>
                                                     </li>
                                                 </ul>
                                             </div>
