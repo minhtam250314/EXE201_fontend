@@ -7,7 +7,7 @@ class Banner extends Component {
             <div className="sigma_banner light-bg style-10 bg-cover">
                 <img src={process.env.PUBLIC_URL + "/assets/img/tr.png"} className="tr" alt="img" />
                 <img src={process.env.PUBLIC_URL + "/assets/img/br.png"} className="br" alt="img" />
-                <img src={process.env.PUBLIC_URL + "/assets/img/bl.png"} className="bl" alt="img" />
+                {/* <img src={process.env.PUBLIC_URL + "/assets/img/bl.png"} className="bl" alt="img" /> */}
                 <div className="banner-slider-inner">
                     <div className="sigma_banner-text">
                         <div className="container">
@@ -15,7 +15,7 @@ class Banner extends Component {
                                 <div className="col-lg-6">
                                     <h5 className="primary-color">Markets &amp; Resources</h5>
                                     <h1 className="title">
-                                        Find The Best Doctor near By You
+                                        Find The Best Helper near By You
                                     </h1>
                                     <div className="banner-links d-flex align-items-center">
                                         <Link to="/contact" className="sigma_btn">Get a Quote</Link>
