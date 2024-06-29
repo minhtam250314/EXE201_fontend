@@ -190,21 +190,21 @@ class Content extends Component {
                                                             <input type="checkbox" id="checkbox" name="checkbox" />
                                                             <label className="mb-0" htmlFor="checkbox">Gói Ngày</label>
                                                         </div>
-                                                        <span>$10</span>
+                                                        <span>200.000đ</span>
                                                     </li>
                                                     <li className="d-flex justify-content-between mb-3">
                                                         <div className="d-flex">
                                                             <input type="checkbox" id="checkbox1" name="checkbox" />
                                                             <label className="mb-0" htmlFor="checkbox1">Gói Tuần</label>
                                                         </div>
-                                                        <span>$70</span>
+                                                        <span>1.200.000đ</span>
                                                     </li>
                                                     <li className="d-flex justify-content-between">
                                                         <div className="d-flex">
                                                             <input type="checkbox" id="checkbox2" name="checkbox" />
                                                             <label className="mb-0" htmlFor="checkbox2">Gói Tháng</label>
                                                         </div>
-                                                        <span>$280</span>
+                                                        <span>4.000.000đ</span>
                                                     </li>
                                                 </ul>
                                             </div>
