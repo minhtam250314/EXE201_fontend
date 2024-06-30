@@ -2,7 +2,6 @@
   "name": "docfind",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://metropolitanhost.com/themes/themeforest/react/docfind/",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.16.0",
     "@emotion/react": "^11.11.4",
