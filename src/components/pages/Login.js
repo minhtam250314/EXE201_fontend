@@ -38,17 +38,17 @@ export default function Login({ setUser }) {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.get('https://665d7770e88051d60406b43d.mockapi.io/test');
-            const user = response.data.find(user => user.email === email && user.password === password);
-            if (user) {
-                setUser(user);
+            const response = await axios.post('https://localhost:7173/api/v1/accounts/signin', {email, password});
+            if (response.status === 200) {
+                //setUser({email, password});
                 history.push("/home"); // Changed from navigate to history.push
-            } else {
-                alert('Invalid credentials');
+            }
+            else {
+                alert('Invalid email or password. Please try again!');
             }
         } catch (error) {
             console.error("There was an error logging in!", error);
-            alert('An error occurred during login. Please try again.');
+            alert('Invalid email or password. Please try again!');
         }
     };
 
