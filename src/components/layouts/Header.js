@@ -34,7 +34,7 @@ class Header extends Navhelper {
                                         <li>
                                             <Link to="#">
                                                 <i className="fal fa-map-marker-alt" />
-                                                Oakwood, Los Angeles, CA 1098
+                                                Q9, Tp Ho Chi Minh, Vietnam
                                             </Link>
                                         </li>
                                     </ul>

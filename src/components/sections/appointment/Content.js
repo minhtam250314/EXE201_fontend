@@ -131,7 +131,7 @@ class Content extends Component {
                 <Modal.Title>Thanh Toán Thành Công</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-              Thanh toán thành công! Đang chuyển hướng về trang chủ...
+                Thanh toán thành công! Đang chuyển hướng về trang chủ...
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="primary" onClick={this.handleClose}>
@@ -228,10 +228,10 @@ class Content extends Component {
                               value={this.state.hospital}
                               onChange={this.hospital}
                             >
-                              <option value="">Chọn Bệnh Viện</option>
-                              <option value="Hospital 1">Bệnh Viện 1</option>
-                              <option value="Hospital 2">Bệnh Viện 2</option>
-                              <option value="Hospital 3">Bệnh Viện 3</option>
+                              <option value="">Chọn Địa Điểm</option>
+                              <option value="Địa chỉ 1">Quận 9</option>
+                              <option value="Địa chỉ 2">Bình Thạnh</option>
+                              <option value="Địa chỉ 3">Gò Vấp</option>
                             </select>
                           </div>
                         </div>
@@ -267,7 +267,7 @@ class Content extends Component {
                               type="text"
                               value={this.state.doctor}
                               onChange={this.doctor}
-                              placeholder="Chọn Bác Sĩ"
+                              placeholder="Chọn Nhân Viên"
                             />
                           </div>
                         </div>
@@ -277,7 +277,7 @@ class Content extends Component {
                               value={this.state.remarks}
                               onChange={this.remarks}
                               rows={7}
-                              placeholder="Lưu ý cho Bác sĩ (Lựa chọn)"
+                              placeholder="Lưu ý cho Nhân Viên (Lựa chọn)"
                             />
                           </div>
                         </div>
@@ -362,7 +362,7 @@ class Content extends Component {
                         onChange={this.condition}
                       />
                       <label className="mb-0" htmlFor="checkbox">
-                      Tôi chấp nhận <Link to="#">Điều khoản</Link>,{" "}
+                        Tôi chấp nhận <Link to="#">Điều khoản</Link>,{" "}
                         <Link to="#">điều kiện</Link> và chính sách chung
                       </label>
                     </div>
@@ -383,18 +383,18 @@ class Content extends Component {
                           <span>08:30 Pm</span>
                         </li>
                         <li className="d-flex align-items-center justify-content-between">
-                          <span>Tên Bác sĩ</span>
+                          <span>Tên Nhân Viên</span>
                           <span>Dr. Joseph Doe</span>
                         </li>
                       </ul>
                       <hr />
                       <ul>
                         <li className="d-flex align-items-center justify-content-between">
-                          <span>Lorem ipsum dolor</span>
+                          <span>Gói dọn dẹp 1</span>
                           <span>$80</span>
                         </li>
                         <li className="d-flex align-items-center justify-content-between">
-                          <span>Lorem ipsum dolor</span>
+                          <span>Gói dọn dẹp 2</span>
                           <span>$140</span>
                         </li>
                       </ul>
