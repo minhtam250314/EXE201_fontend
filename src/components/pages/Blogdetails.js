@@ -12,7 +12,7 @@ class Blogdetails extends Component {
         return (
             <Fragment>
                 <MetaTags>
-                    <title>Docfind - Doctors Appointment Booking - React Template | {pagelocation}</title>
+                    <title>HomeAssist - For Your House | {pagelocation}</title>
                     <meta
                         name="description"
                         content="#"
