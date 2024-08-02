@@ -20,10 +20,6 @@ const Servicedetails = React.lazy(() => import("./components/pages/Servicedetail
 const Faqs = React.lazy(() => import("./components/pages/Faqs"));
 // Appointment
 const Appointment = React.lazy(() => import("./components/pages/Appointment"));
-// Clinics
-const Clinicgrid = React.lazy(() => import("./components/pages/Clinicgrid"));
-const Cliniclist = React.lazy(() => import("./components/pages/Cliniclist"));
-const Clinicdetails = React.lazy(() => import("./components/pages/Clinicdetails"));
 // Doctors
 const Doctorgrid = React.lazy(() => import("./components/pages/Doctorgrid"));
 const Doctorlist = React.lazy(() => import("./components/pages/Doctorlist"));
@@ -45,12 +41,12 @@ const ScrollToTop = withRouter(({ children, location: { pathname } }) => {
 
 function App() {
   return (
-    <Router basename={"/themes/themeforest/react/docfind/home"}>
+    <Router basename={"/themes/themeforest/react/docfind/"}>
       <Suspense fallback={<div></div>}>
         <ScrollToTop>
           <Switch>
             {/* Home */}
-            <Route exact path="/home" component={Home} />
+            <Route exact path="/" component={Home} />
             {/* Login */}
             <Route exact path="/login" component={Login} />
             {/* Register */}
@@ -74,11 +70,6 @@ function App() {
             <Route exact path="/faqs" component={Faqs} />
             {/* Appointment */}
             <Route exact path="/appointment" component={Appointment} />
-            {/* Clinics */}
-            <Route exact path="/clinic/cat/:catId" component={props => (<Clinicgrid {...props} key={window.location.pathname} />)} />
-            <Route exact path="/clinic-grid" component={Clinicgrid} />
-            <Route exact path="/clinic-list" component={Cliniclist} />
-            <Route exact path="/clinic-details/:id" component={props => (<Clinicdetails {...props} key={window.location.pathname} />)} />
             {/* Doctors */}
             <Route exact path="/doctor/cat/:catId" component={props => (<Doctorgrid {...props} key={window.location.pathname} />)} />
             <Route exact path="/doctor-grid" component={Doctorgrid} />

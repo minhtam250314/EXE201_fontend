@@ -38,7 +38,7 @@ class Searchform extends Component {
                                 <div className="col-lg-6">
                                     <div className="form-group">
                                         <label>Search Topic</label>
-                                        <input type="text" className="topic-field" placeholder="Search doctors, clinic, Hospitals etc." value={this.state.topic} onChange={this.onTopicChange} required />
+                                        <input type="text" className="topic-field" placeholder="Tìm kiếm thông tin" value={this.state.topic} onChange={this.onTopicChange} required />
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
@@ -46,7 +46,7 @@ class Searchform extends Component {
                                         <label>Location</label>
                                         <div className="input-group">
                                             <i className="fal fa-map-marker-alt d-none d-sm-block" />
-                                            <input type="text" className="location-field" placeholder="Location" value={this.state.location} onChange={this.onLocationChange} required />
+                                            <input type="text" className="location-field" placeholder="Địa điểm" value={this.state.location} onChange={this.onLocationChange} required />
                                             <div className="input-group-append">
                                                 <button type="submit"> <i className="fal fa-search mr-1" /> Find Now</button>
                                             </div>

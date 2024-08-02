@@ -2,8 +2,11 @@
   "name": "docfind",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://metropolitanhost.com/themes/themeforest/react/docfind/",
+  "engines": {
+    "node": "v16.16.0"
+  },
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.19",
@@ -15,16 +18,16 @@
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
     "magnific-popup": "^1.1.0",
-    "react": "^17.0.2",
+    "react": "^16.14.0",
     "react-bootstrap": "^1.6.1",
     "react-countup": "^5.2.0",
-    "react-dom": "^17.0.2",
+    "react-dom": "^16.14.0",
     "react-google-recaptcha": "^2.1.0",
     "react-ion-slider": "^1.0.17",
     "react-js-pagination": "^3.0.2",
-    "react-meta-tags": "^1.0.1",
+    "react-meta-tags": "^0.7.0",
     "react-router-dom": "^5.3.4",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "^3.0.1",
     "react-scroll": "^1.8.3",
     "react-slick": "^0.28.1",
     "react-visibility-sensor": "^5.1.1",
@@ -33,7 +36,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && npm install --legacy-peer-deps && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

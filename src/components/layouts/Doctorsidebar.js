@@ -24,9 +24,9 @@ class Doctorsidebar extends Component {
                 <div className="widget">
                     <h5 className="widget-title">Apppointment availability</h5>
                     <input type="checkbox" name="free" id="availabilityDoctors" />
-                    <label htmlFor="availabilityDoctors">Free doctors only</label>
+                    <label htmlFor="availabilityDoctors">Free Helper only</label>
                     <input type="checkbox" name="unavailable" id="unavailableDoctors" />
-                    <label className="mb-0" htmlFor="unavailableDoctors">Unavailable doctors only</label>
+                    <label className="mb-0" htmlFor="unavailableDoctors">Unavailable Helper only</label>
                 </div>
                 <div className="widget">
                     <h5 className="widget-title">Gender</h5>

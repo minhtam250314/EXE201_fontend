@@ -2,6 +2,7 @@
 import author from '../data/doctor/doctor.json';
 import tags from '../data/tags.json';
 import category from '../data/category.json';
+import React from 'react';
 
 // Name Initial
 function getNameInitials(string) {

@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "title": "Therapiya",
-        "icon": "flaticon-stethoscope",
+        "title": "Thời Gian",
+        "icon": "flaticon-event",
         "image": "assets/img/home-1/300x240.jpg",
         "category": [
             1,
@@ -19,8 +19,8 @@
     },
     {
         "id": 2,
-        "title": "Dentistry",
-        "icon": "flaticon-doctor-1",
+        "title": "Nhân Viên",
+        "icon": "flaticon-group",
         "image": "assets/img/home-1/300x240-0.jpg",
         "category": [
             3,
@@ -37,8 +37,8 @@
     },
     {
         "id": 3,
-        "title": "Virusology",
-        "icon": "flaticon-heartbeat",
+        "title": "Địa điểm",
+        "icon": "flaticon-location",
         "image": "assets/img/home-1/300x240-1.jpg",
         "category": [
             1,
@@ -55,8 +55,8 @@
     },
     {
         "id": 4,
-        "title": "Pharmocology",
-        "icon": "flaticon-medical-record",
+        "title": "Về Chúng Tôi",
+        "icon": "flaticon-group",
         "image": "assets/img/home-1/300x240-2.jpg",
         "category": [
             2,
