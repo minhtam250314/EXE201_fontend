@@ -54,7 +54,7 @@
             {
                 "id": 3.5,
                 "link": "/appointment",
-                "linkText": "Book Appointment"
+                "linkText": "Appointment"
             },
             {
                 "id": 3.6,
@@ -70,7 +70,7 @@
     },
     {
         "id": 6,
-        "linkText": "Liên Lạc",
+        "linkText": "Lịch sử",
         "link": "/contact"
     }
 ]
