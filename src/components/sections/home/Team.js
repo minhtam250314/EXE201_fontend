@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import doctorblock from "../../../data/doctor/doctor.json";
+import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const settings = {
     slidesToShow: 5,
@@ -37,45 +37,58 @@ const settings = {
             }
         }
     ]
-}
-class Team extends Component {
-    render() {
-        return (
-            <div className="section section-padding sigma_team-sec style-14 bg-gray">
-                <div className="container-fluid p-sm-0">
-                    <div className="section-title centered">
-                        <span className="subtitle text-white">Meet Our Team</span>
-                        <h3 className="title text-white">Nhân Viên Chúng Tôi</h3>
-                    </div>
-                    <Slider {...settings} className="sigma_team-slider-2">
-                        {/* Data */}
-                        {doctorblock.map((item, i) => (
-                            <div key={i} className="sigma_team style-14">
-                                <div className="sigma_team-thumb">
-                                    <img src={process.env.PUBLIC_URL + "/" + item.image} alt={item.title} />
+};
+
+const Team = () => {
+    const [doctors, setDoctors] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('https://localhost:7173/api/v1/houseHelper');
+                setDoctors(response.data);
+            } catch (error) {
+                console.error("Error fetching the doctors data", error);
+            }
+        };
+        fetchData();
+    }, []);
+
+    return (
+        <div className="section section-padding sigma_team-sec style-14 bg-gray">
+            <div className="container-fluid p-sm-0">
+                <div className="section-title centered">
+                    <span className="subtitle text-white">Meet Our Team</span>
+                    <h3 className="title text-white">Our Creative Team</h3>
+                </div>
+                <Slider {...settings} className="sigma_team-slider-2">
+                    {/* Data */}
+                    {doctors.map((item, i) => (
+                        <div key={i} className="sigma_team style-14">
+                            <div className="sigma_team-thumb">
+                                <img src={process.env.PUBLIC_URL + "/" + item.avatar} alt={item.username} />
+                            </div>
+                            <div className="sigma_team-body">
+                                <h5>
+                                    <Link to={"/doctor-details/" + item.helperId}>{item.username}</Link>
+                                </h5>
+                                <div className="sigma_team-categories">
+                                    <Link to={"/doctor-details/" + item.helperId} className="sigma_team-category">{item.district}</Link>
                                 </div>
-                                <div className="sigma_team-body">
-                                    <h5>
-                                        <Link to={"/doctor-details/" + item.id}>{item.name}</Link>
-                                    </h5>
-                                    <div className="sigma_team-categories">
-                                        <Link to={"/doctor-details/" + item.id} className="sigma_team-category">{item.specialist}</Link>
-                                    </div>
-                                    <div className="sigma_team-info">
-                                        <span>
-                                            <i className="fal fa-map-marker-alt" />
-                                            {item.location}
-                                        </span>
-                                    </div>
+                                <div className="sigma_team-info">
+                                    <span>
+                                        <i className="fal fa-map-marker-alt" />
+                                        {item.district}
+                                    </span>
                                 </div>
                             </div>
-                        ))}
-                        {/* Data */}
-                    </Slider>
-                </div>
+                        </div>
+                    ))}
+                    {/* Data */}
+                </Slider>
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
 
 export default Team;

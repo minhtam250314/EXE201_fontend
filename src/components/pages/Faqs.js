@@ -5,7 +5,7 @@ import Breadcrumbs from '../layouts/Breadcrumbs';
 import Footer from '../layouts/Footer';
 import Content from '../sections/faqs/Content';
 
-const pagelocation = "FAQ's";
+const pagelocation = "Admin Management";
 
 class Faqs extends Component {
     render() {

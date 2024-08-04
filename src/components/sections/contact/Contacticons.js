@@ -1,57 +1,115 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from "react";
+import { useTable } from "react-table";
+import axios from "axios";
 
-class Contacticons extends Component {
-    render() {
-        return (
-            <div className="section section-padding">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-4 col-md-6">
-                            <div className="sigma_info style-24">
-                                <div className="sigma_info-title">
-                                    <span className="sigma_info-icon bg-primary-1 text-white">
-                                        <i className="flaticon-hospital" />
-                                    </span>
-                                </div>
-                                <div className="sigma_info-description">
-                                    <h5>Địa Chỉ</h5>
-                                    <p>PSD Building, 2 Tower St, United States.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="sigma_info style-24">
-                                <div className="sigma_info-title">
-                                    <span className="sigma_info-icon bg-primary-1 text-white">
-                                        <i className="flaticon-call" />
-                                    </span>
-                                </div>
-                                <div className="sigma_info-description">
-                                    <h5>Số Điện Thoại</h5>
-                                    <p>Telephone: 0029129102320</p>
-                                    <p>Mobile: 000 2324 39493</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="sigma_info style-24">
-                                <div className="sigma_info-title">
-                                    <span className="sigma_info-icon bg-primary-1 text-white">
-                                        <i className="flaticon-envelope" />
-                                    </span>
-                                </div>
-                                <div className="sigma_info-description">
-                                    <h5>Địa Chỉ Email</h5>
-                                    <p>Main Email: example@example.com</p>
-                                    <p>Inquiries: example@example.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
+const Contacticons = () => {
+  const [data, setData] = useState([]);
+  const id = localStorage.getItem("Id");
+
+  useEffect(() => {
+    // Gọi API GET để lấy dữ liệu
+    axios
+      .get(`https://localhost:7173/api/v1/booking/getBookingByCustomerId/${id}`)
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error("There was an error fetching the data!", error);
+      });
+  }, []);
+
+  const statusRenderer = (status) => {
+    switch (status) {
+      case 1:
+        return "Approved";
+      case 2:
+        return "Success";
+      case 3:
+        return "Fail";
+      default:
+        return "Unknown";
     }
-}
+  };
+
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: "ID",
+        accessor: "bookingId", // Tên trường trong dữ liệu
+      },
+      {
+        Header: "STAFF NAME",
+        accessor: "staffName",
+      },
+      {
+        Header: "SERVICE PACKAGE",
+        accessor: "packageName",
+      },
+      {
+        Header: "DESCRIPTION",
+        accessor: "description",
+      },
+      {
+        Header: "START TIME",
+        accessor: "startTime",
+      },
+      {
+        Header: "HOURS",
+        accessor: "hours",
+      },
+      {
+        Header: "TOTAL PRICE",
+        accessor: "totalPrice",
+      },
+      {
+        Header: "STATUS",
+        accessor: "status",
+        Cell: ({ cell: { value } }) => statusRenderer(value),
+      },
+    ],
+    []
+  );
+
+  const tableInstance = useTable({ columns, data });
+
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    tableInstance;
+
+  return (
+    <div className="section section-padding">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <table {...getTableProps()} className="table">
+              <thead>
+                {headerGroups.map((headerGroup) => (
+                  <tr {...headerGroup.getHeaderGroupProps()}>
+                    {headerGroup.headers.map((column) => (
+                      <th {...column.getHeaderProps()}>
+                        {column.render("Header")}
+                      </th>
+                    ))}
+                  </tr>
+                ))}
+              </thead>
+              <tbody {...getTableBodyProps()}>
+                {rows.map((row) => {
+                  prepareRow(row);
+                  return (
+                    <tr {...row.getRowProps()}>
+                      {row.cells.map((cell) => (
+                        <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                      ))}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Contacticons;

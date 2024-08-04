@@ -1,64 +1,113 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from "react";
 import faqs from "../../../data/faqs.json";
 import { Tab, Nav, Accordion, Button, Card } from "react-bootstrap";
+import { useTable } from "react-table";
+import axios from "axios";
 
-class Content extends Component {
-    render() {
-        return (
-            <div className="section">
-                <div className="container">
-                    <Tab.Container defaultActiveKey={"tab10"}>
-                        <div className="row">
-                            <div className="col-lg-4">
-                                <div className="sigma_accordion style-13">
-                                    <div className="sigma_tab-item style-4">
-                                        <Nav as="ul" variant="tabs">
-                                            {/* Data */}
-                                            {faqs.map((faq, i) => (
-                                                <Nav.Item as="li" key={i}>
-                                                    <Nav.Link eventKey={"tab" + 1 + i}>
-                                                        {faq.title}
-                                                        <i className="fal fa-chevron-right" />
-                                                    </Nav.Link>
-                                                </Nav.Item>
-                                            ))}
-                                            {/* Data */}
-                                        </Nav>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-8">
-                                <Tab.Content className="mt-5 mt-lg-0">
-                                    {faqs.map((faq, i) => (
-                                        <Tab.Pane key={i} eventKey={"tab" + 1 + i}>
-                                            <div className="sigma_accordion style-13">
-                                                <Accordion defaultActiveKey={1}>
-                                                    {faq.items.map((item, i) => (
-                                                        <Card key={i}>
-                                                            <Accordion.Collapse eventKey={1 + i} className="collapseparent">
-                                                                <Card.Body>
-                                                                    {item.text}
-                                                                </Card.Body>
-                                                            </Accordion.Collapse>
-                                                            <Card.Header>
-                                                                <Accordion.Toggle as={Button} variant="link" eventKey={1 + i}>
-                                                                    {item.title}
-                                                                </Accordion.Toggle>
-                                                            </Card.Header>
-                                                        </Card>
-                                                    ))}
-                                                </Accordion>
-                                            </div>
-                                        </Tab.Pane>
-                                    ))}
-                                </Tab.Content>
-                            </div>
-                        </div>
-                    </Tab.Container>
-                </div>
+const Contacticons = () => {
+    const [data, setData] = useState([]);
+    const id = localStorage.getItem("Id");
+  
+    useEffect(() => {
+      // Gọi API GET để lấy dữ liệu
+      axios
+        .get(`https://localhost:7173/api/v1/bookings`)
+        .then((response) => {
+          setData(response.data);
+        })
+        .catch((error) => {
+          console.error("There was an error fetching the data!", error);
+        });
+    }, []);
+  
+    const statusRenderer = (status) => {
+      switch (status) {
+        case 1:
+          return "Approved";
+        case 2:
+          return "Success";
+        case 3:
+          return "Fail";
+        default:
+          return "Unknown";
+      }
+    };
+  
+    const columns = React.useMemo(
+      () => [
+        {
+          Header: "ID",
+          accessor: "bookingId", // Tên trường trong dữ liệu
+        },
+      //   {
+      //     Header: "SERVICE PACKAGE",
+      //     accessor: "packageId",
+      //   },
+        {
+          Header: "DESCRIPTION",
+          accessor: "description",
+        },
+        {
+          Header: "START TIME",
+          accessor: "startTime",
+        },
+        {
+          Header: "HOURS",
+          accessor: "hours",
+        },
+        {
+          Header: "TOTAL PRICE",
+          accessor: "totalPrice",
+        },
+        {
+          Header: "STATUS",
+          accessor: "status",
+          Cell: ({ cell: { value } }) => statusRenderer(value),
+        },
+      ],
+      []
+    );
+  
+    const tableInstance = useTable({ columns, data });
+  
+    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+      tableInstance;
+  
+    return (
+      <div className="section section-padding">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <table {...getTableProps()} className="table">
+                <thead>
+                  {headerGroups.map((headerGroup) => (
+                    <tr {...headerGroup.getHeaderGroupProps()}>
+                      {headerGroup.headers.map((column) => (
+                        <th {...column.getHeaderProps()}>
+                          {column.render("Header")}
+                        </th>
+                      ))}
+                    </tr>
+                  ))}
+                </thead>
+                <tbody {...getTableBodyProps()}>
+                  {rows.map((row) => {
+                    prepareRow(row);
+                    return (
+                      <tr {...row.getRowProps()}>
+                        {row.cells.map((cell) => (
+                          <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                        ))}
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
             </div>
-        );
-    }
-}
-
-export default Content;
+          </div>
+        </div>
+      </div>
+    );
+  };
+  
+  export default Contacticons;

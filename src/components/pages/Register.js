@@ -14,20 +14,24 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useHistory } from 'react-router-dom'; // Changed from useNavigate to useHistory
 import axios from 'axios';
+//import { Description } from '@mui/icons-material';
 
 function Register() {
     const history = useHistory(); // Changed from useNavigate to useHistory
-    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [userName, setName] = useState('');
+    const [address, setAddress] = useState('');
+    const [phone, setPhoneNumber] = useState('');
+    const [description, setDescription] = useState('');
 
     const defaultTheme = createTheme(); // Define defaultTheme here
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('https://665d7770e88051d60406b43d.mockapi.io/test', { username, email, password });
-            if (response.status === 201) {
+            const response = await axios.post('https://localhost:7173/api/v1/accounts/register', { email, password, userName, address, phone, description });
+            if (response.status === 200) {
                 history.push("/login"); // Changed from navigate to history.push
             }
         } catch (error) {
@@ -73,18 +77,6 @@ function Register() {
                                 margin="normal"
                                 required
                                 fullWidth
-                                id="username"
-                                label="Username"
-                                name="username"
-                                autoComplete="username"
-                                autoFocus
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
-                            />
-                            <TextField
-                                margin="normal"
-                                required
-                                fullWidth
                                 id="email"
                                 label="Email Address"
                                 name="email"
@@ -103,6 +95,54 @@ function Register() {
                                 autoComplete="current-password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <TextField
+                                margin="normal"
+                                required
+                                fullWidth
+                                id="username"
+                                label="Username"
+                                name="username"
+                                autoComplete="username"
+                                autoFocus
+                                value={userName}
+                                onChange={(e) => setName(e.target.value)}
+                            />
+                            <TextField
+                                margin="normal"
+                                required
+                                fullWidth
+                                name="address"
+                                label="Address"
+                                type="address"
+                                id="address"
+                                autoComplete="current-address"
+                                value={address}
+                                onChange={(e) => setAddress(e.target.value)}
+                            />
+                            <TextField
+                                margin="normal"
+                                required
+                                fullWidth
+                                name="phonenumber"
+                                label="Phone Number"
+                                type="phonenumber"
+                                id="phonenumber"
+                                autoComplete="current-phonenumber"
+                                value={phone}
+                                onChange={(e) => setPhoneNumber(e.target.value)}
+                            />
+                            <TextField
+                                margin="normal"
+                                required
+                                fullWidth
+                                name="gender"
+                                label="Description"
+                                type="gender"
+                                id="gender"
+                                autoComplete="current-gender"
+                                value={description}
+                                onChange={(e) => setDescription(e.target.value)}
                             />
                             <Button
                                 type="submit"

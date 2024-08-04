@@ -5,7 +5,7 @@ import Breadcrumbs from '../layouts/Breadcrumbs';
 import Footer from '../layouts/Footer';
 import Content from '../sections/appointment/Content';
 
-const pagelocation = "Appointment";
+const pagelocation = "BOOKING MANAGEMENT FOR STAFF";
 
 class Appointment extends Component {
     render() {
