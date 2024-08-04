@@ -63,7 +63,7 @@ export default function Login({ setUser }) {
           const userName = response.data.userName;
           localStorage.setItem("Id", customerId);
           localStorage.setItem("Name", userName);
-          history.push("/contact");
+          history.push("/appointment");
         }
         if (role === 1) {
             const customerId = 0;

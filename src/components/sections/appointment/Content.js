@@ -12,7 +12,7 @@ const Contacticons = () => {
   useEffect(() => {
     // Gọi API GET để lấy dữ liệu
     axios
-      .get(`https://localhost:7173/api/v1/booking/getBookingByCustomerId/${id}`)
+      .get(`https://localhost:7173/api/v1/booking/getBookingByHouseHelperId/${id}`)
       .then((response) => {
         setData(response.data);
       })
@@ -31,7 +31,7 @@ const Contacticons = () => {
         console.log("Update successful", response);
         // Cập nhật lại dữ liệu sau khi PUT thành công nếu cần
         axios
-          .get(`https://localhost:7173/api/v1/booking/getBookingByCustomerId/${id}`)
+          .get(`https://localhost:7173/api/v1/booking/getBookingByHouseHelperId/${id}`)
           .then((response) => {
             setData(response.data);
           })
@@ -65,10 +65,22 @@ const Contacticons = () => {
         Header: "ID",
         accessor: "bookingId", // Tên trường trong dữ liệu
       },
-      //   {
-      //     Header: "SERVICE PACKAGE",
-      //     accessor: "packageId",
-      //   },
+      {
+        Header: "CUSTOMER NAME",
+        accessor: "customerName",
+      },
+      {
+        Header: "CUSTOMER PHONE",
+        accessor: "phone",
+      },
+      {
+        Header: "ADDRESS",
+        accessor: "address",
+      },
+        {
+          Header: "SERVICE PACKAGE",
+          accessor: "packageName",
+        },
       {
         Header: "DESCRIPTION",
         accessor: "description",

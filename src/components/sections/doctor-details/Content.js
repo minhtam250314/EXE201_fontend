@@ -25,13 +25,13 @@ class Content extends Component {
   }
   handleSubmit = async (event) => {
     event.preventDefault();
-
+    const detailId = this.props.detailId;
     // Lấy các giá trị từ các trường input
     const date = event.target.date.value;
     const time = event.target.time.value;
     const startTime = date + "T" + time;
     const packageId = event.target.service.value;
-    const helperId = 1;
+    const helperId = detailId;
     const customerId = localStorage.getItem("Id");
     const hours = event.target.hours.value;
     const description = "None";
@@ -59,6 +59,7 @@ class Content extends Component {
         bookingData
       );
       console.log("Booking created:", response.data);
+      alert("Đặt lịch thành công!");
       // Xử lý phản hồi từ API nếu cần
     } catch (error) {
       console.error("Error creating booking:", error);

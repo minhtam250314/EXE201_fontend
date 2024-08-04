@@ -37,10 +37,14 @@ const Contacticons = () => {
         Header: "ID",
         accessor: "bookingId", // Tên trường trong dữ liệu
       },
-    //   {
-    //     Header: "SERVICE PACKAGE",
-    //     accessor: "packageId",
-    //   },
+      {
+        Header: "STAFF NAME",
+        accessor: "staffName",
+      },
+      {
+        Header: "SERVICE PACKAGE",
+        accessor: "packageName",
+      },
       {
         Header: "DESCRIPTION",
         accessor: "description",
