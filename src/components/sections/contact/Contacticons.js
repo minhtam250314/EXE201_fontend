@@ -9,7 +9,7 @@ const Contacticons = () => {
   useEffect(() => {
     // Gọi API GET để lấy dữ liệu
     axios
-      .get(`https://localhost:7173/api/v1/booking/getBookingByCustomerId/${id}`)
+      .get(`https://haocute-brgeh5c6hsf7fpc5.eastus-01.azurewebsites.net/api/v1/booking/getBookingByCustomerId/${id}`)
       .then((response) => {
         setData(response.data);
       })

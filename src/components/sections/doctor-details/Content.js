@@ -16,7 +16,7 @@ class Content extends Component {
     const detailId = this.props.detailId;
     try {
       const response = await axios.get(
-        `https://localhost:7173/api/v1/houseHelper/${detailId}`
+        `https://haocute-brgeh5c6hsf7fpc5.eastus-01.azurewebsites.net/api/v1/houseHelper/${detailId}`
       );
       this.setState({ item: response.data });
     } catch (error) {
@@ -55,7 +55,7 @@ class Content extends Component {
     try {
       // Gửi yêu cầu POST đến API
       const response = await axios.post(
-        "https://localhost:7173/api/v1/booking/createBooking",
+        "https://haocute-brgeh5c6hsf7fpc5.eastus-01.azurewebsites.net/api/v1/booking/createBooking",
         bookingData
       );
       console.log("Booking created:", response.data);
