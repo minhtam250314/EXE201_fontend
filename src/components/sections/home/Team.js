@@ -45,7 +45,7 @@ const Team = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://localhost:7173/api/v1/houseHelper');
+                const response = await axios.get('https://haocute-brgeh5c6hsf7fpc5.eastus-01.azurewebsites.net/api/v1/houseHelper');
                 setDoctors(response.data);
             } catch (error) {
                 console.error("Error fetching the doctors data", error);

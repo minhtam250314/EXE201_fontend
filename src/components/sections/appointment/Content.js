@@ -12,7 +12,7 @@ const Contacticons = () => {
   useEffect(() => {
     // Gọi API GET để lấy dữ liệu
     axios
-      .get(`https://localhost:7173/api/v1/booking/getBookingByHouseHelperId/${id}`)
+      .get(`https://haocute-brgeh5c6hsf7fpc5.eastus-01.azurewebsites.net/api/v1/booking/getBookingByHouseHelperId/${id}`)
       .then((response) => {
         setData(response.data);
       })
@@ -25,13 +25,13 @@ const Contacticons = () => {
     // Gọi API PUT
     axios
       .put(
-        `https://localhost:7173/api/v1/booking/setStatusComplete/${bookingId}`
+        `https://haocute-brgeh5c6hsf7fpc5.eastus-01.azurewebsites.net/api/v1/booking/setStatusComplete/${bookingId}`
       )
       .then((response) => {
         console.log("Update successful", response);
         // Cập nhật lại dữ liệu sau khi PUT thành công nếu cần
         axios
-          .get(`https://localhost:7173/api/v1/booking/getBookingByHouseHelperId/${id}`)
+          .get(`https://haocute-brgeh5c6hsf7fpc5.eastus-01.azurewebsites.net/api/v1/booking/getBookingByHouseHelperId/${id}`)
           .then((response) => {
             setData(response.data);
           })

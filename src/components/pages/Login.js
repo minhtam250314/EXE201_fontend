@@ -44,7 +44,7 @@ export default function Login({ setUser }) {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "https://localhost:7173/api/v1/accounts/signin",
+        "https://haocute-brgeh5c6hsf7fpc5.eastus-01.azurewebsites.net/api/v1/accounts/signin",
         { email, password }
       );
       if (response.status === 200) {

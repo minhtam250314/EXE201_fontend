@@ -30,7 +30,7 @@ function Register() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('https://localhost:7173/api/v1/accounts/register', { email, password, userName, address, phone, description });
+            const response = await axios.post('https://haocute-brgeh5c6hsf7fpc5.eastus-01.azurewebsites.net/api/v1/accounts/register', { email, password, userName, address, phone, description });
             if (response.status === 200) {
                 history.push("/login"); // Changed from navigate to history.push
             }
